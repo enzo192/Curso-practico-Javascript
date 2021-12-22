@@ -53,7 +53,8 @@ function perimetroTriangulo(lado1, lado2, base) {
 // const areaTriangulo = (BaseTriangulo * alturaTriangulo) / 2;
 // console.log("El área del triangulo es: " + areaTriangulo + "cm^2");
 function areaTriangulo(base, lado1) {
-    const altura = Math.sqrt(((base/2) * (base/2)) + (lado1 * lado1));
+    // h= raiz(a^2 - (b/2)^2)
+    const altura = Math.sqrt((lado1 * lado1) - ((base/2) * (base/2)));
     return (base * altura) / 2;
 }
 console.groupEnd();
