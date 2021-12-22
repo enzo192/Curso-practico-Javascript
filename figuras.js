@@ -46,13 +46,14 @@ console.groupEnd();
 // const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + BaseTriangulo;
 // console.log("La perimetro del triangulo es de: " + perimetroTriangulo + "cm");
 function perimetroTriangulo(lado1, lado2, base) {
-    return lado1 + lado2 + base;
+    return (lado1 + lado2 + base);
 }
 
 
 // const areaTriangulo = (BaseTriangulo * alturaTriangulo) / 2;
 // console.log("El área del triangulo es: " + areaTriangulo + "cm^2");
-function areaTriangulo(base, altura) {
+function areaTriangulo(base, lado1) {
+    const altura = Math.sqrt(((base/2) * (base/2)) + (lado1 * lado1));
     return (base * altura) / 2;
 }
 console.groupEnd();
@@ -95,10 +96,11 @@ function areaCirculo(radio) {
 console.groupEnd();
 
 // Aqui interactuamos con el html
+//Cuadrado
 
 function calcularPerimetroCuadrado() {
     const input = document.getElementById("inputCuadrado");
-    const value = input.value;
+    const value = parseInt(input.value);
     
     const perimetro = perimetroCuadrado(value);
     alert(perimetro);
@@ -106,8 +108,31 @@ function calcularPerimetroCuadrado() {
 
 function calcularAreaCuadrado() {
     const input = document.getElementById("inputCuadrado");
-    const value = input.value;
+    const value = parseInt(input.value);
     
     const area = areaCuadrado(value);
     alert(area);
 }
+
+//Trinagulo
+function calcularPerimetroTriangulo() {
+    const input1 = document.getElementById("inputLado1");
+    const value1 = parseInt(input1.value);
+    const input2 = document.getElementById("inputLado2");
+    const value2 = parseInt(input2.value);
+    const input3 = document.getElementById("inputBase");
+    const value3 = parseInt(input3.value);
+
+    const perimetro = perimetroTriangulo(value1,value2,value3);
+    alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+    const input1 = document.getElementById("inputBase");
+    const value1 = parseInt(input1.value);
+    const input2 = document.getElementById("inputLado1");
+    const value2 = parseInt(input2.value);
+    
+    const area = areaTriangulo(value1,value2);
+    alert(area);
+} 
