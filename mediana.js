@@ -20,14 +20,14 @@ function calcularMediaAritmetica(lista) {
     return promedioLista;
 }
 
-let listas = [
-    50, 20, 60, 10, 5
-];
+// let listas = [
+//     50, 20, 60, 10, 5
+// ];
 
-const mitadListas = parseInt(listas.length / 2);
+// const mitadListas = parseInt(listas.length / 2);
 
 function comparar ( a, b ){ return a - b; } //funcion para comparar numeros y ordenarlos
-listas.sort(comparar); // orden de acuerdo a la funcion anterior
+// listas.sort(comparar); // orden de acuerdo a la funcion anterior
 
 function esPar(numero) {
     if (numero % 2 === 0) {
@@ -37,20 +37,43 @@ function esPar(numero) {
     }
 }
 
-let mediana;
+// let mediana;
 
-if (esPar(listas.length)) {
-    const elemento1 = listas[mitadListas - 1];
-    const elemento2 = listas[mitadListas];
+// if (esPar(listas.length)) {
+//     const elemento1 = listas[mitadListas - 1];
+//     const elemento2 = listas[mitadListas];
 
-    const promedioElemento1y2 = calcularMediaAritmetica([elemento1,elemento2]);
+//     const promedioElemento1y2 = calcularMediaAritmetica([elemento1,elemento2]);
 
-    mediana = promedioElemento1y2;
+//     mediana = promedioElemento1y2;
 
-} else {
-    mediana = listas[mitadListas];
-};
+// } else {
+//     mediana = listas[mitadListas];
+// };
 
+function calcularMediana(listas) {
+
+    const mitadListas = parseInt(listas.length / 2);
+
+    console.log("mitadlistas:" + mitadListas);
+    listas.sort(comparar);
+
+    let mediana;
+
+    if (esPar(listas.length)) {
+        const elemento1 = listas[mitadListas - 1];
+        const elemento2 = listas[mitadListas];
+
+        const promedioElemento1y2 = calcularMediaAritmetica([elemento1,elemento2]);
+
+        mediana = promedioElemento1y2;
+
+    } else {
+        mediana = listas[mitadListas];
+    };
+
+    return mediana;
+}
 
 
 //calcular mediana para cualquier lista
