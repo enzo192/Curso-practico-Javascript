@@ -54,3 +54,16 @@ function calcularModa(listas) {
     return moda;
     
 }
+
+function onclickButtonModa() {
+    const inputModa = document.getElementById("inputModa");
+    const inputValor = inputModa.value;
+
+    const valoresArray = inputValor.split(',');
+
+    const modaCualquierArray = calcularModa(valoresArray);
+
+    const resultM = document.getElementById("ResultM");
+    resultM.innerText = "La Moda es: " + modaCualquierArray[0];
+
+};

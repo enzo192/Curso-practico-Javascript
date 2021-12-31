@@ -7,7 +7,22 @@
     <title>Promedio</title>
 </head>
 <body>
-    <h1>Promedio</h1>
+    <header>
+        <h1>Promedio</h1>
+    </header>
+    <p>
+        Este hace parte del curso practico de JavaScript en el que se calcula el Promedio
+    </p>
+    <section>
+        <form action="">
+            <label for="inputPromedio">Ingresa la lista de números a calcular promedio separados por comas ",": </label>
+            <input type="text" id="inputPromedio"/>
+            <button type="button" onclick="onclickButtonPromedio()">
+                Calcular Promedio
+            </button>
+            <p id="ResultP"></p>
+        </form>
+    </section>
     <script src="./promedio.js"></script>
 </body>
 </html>
