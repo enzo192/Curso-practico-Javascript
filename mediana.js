@@ -55,7 +55,6 @@ function calcularMediana(listas) {
 
     const mitadListas = parseInt(listas.length / 2);
 
-    console.log("mitadlistas:" + mitadListas);
     listas.sort(comparar);
 
     let mediana;
@@ -73,6 +72,17 @@ function calcularMediana(listas) {
     };
 
     return mediana;
+}
+
+function onclickButtonMediana() {
+    const inputMediana = document.getElementById("inputMediana").value;
+
+    const listaArray = JSON.parse(`[${inputMediana}]`);
+
+    const calculoDeMediana = calcularMediana(listaArray);
+
+    const resultM = document.getElementById("ResultM");
+    resultM.innerText = "La mediana es: " + calculoDeMediana;
 }
 
 
